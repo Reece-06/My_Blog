@@ -13,7 +13,7 @@ class Post(models.Model):
     slug = models.SlugField(unique=True, db_index=True)
     author = models.ForeignKey("Author", on_delete=models.SET_NULL, related_name="posts", null=True)
     tags = models.ManyToManyField("Tag")
-
+    
     def __str__(self):
         return self.title
     
